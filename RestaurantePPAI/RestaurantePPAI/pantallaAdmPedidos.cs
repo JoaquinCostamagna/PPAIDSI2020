@@ -21,5 +21,10 @@ namespace RestaurantePPAI
         {
 
         }
+
+        private void pantallaAdmPedidos_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
