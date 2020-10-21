@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(pantallaAdmPedidos));
             this.dgvSeleccionados = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,6 +50,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtUsuario = new System.Windows.Forms.Label();
             this.lblUsuarioLogeado = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSeleccionados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetallePedido)).BeginInit();
             this.panelPedidos.SuspendLayout();
@@ -112,10 +114,11 @@
             // 
             this.btnAgregar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
-            this.btnAgregar.Location = new System.Drawing.Point(622, 267);
+            this.btnAgregar.Location = new System.Drawing.Point(622, 184);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(81, 42);
             this.btnAgregar.TabIndex = 4;
+            this.toolTip1.SetToolTip(this.btnAgregar, "Agregar");
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
@@ -123,21 +126,25 @@
             // 
             this.btnQuitar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnQuitar.Image = ((System.Drawing.Image)(resources.GetObject("btnQuitar.Image")));
-            this.btnQuitar.Location = new System.Drawing.Point(622, 315);
+            this.btnQuitar.Location = new System.Drawing.Point(622, 232);
             this.btnQuitar.Name = "btnQuitar";
             this.btnQuitar.Size = new System.Drawing.Size(81, 46);
             this.btnQuitar.TabIndex = 5;
+            this.toolTip1.SetToolTip(this.btnQuitar, "Quitar");
             this.btnQuitar.UseVisualStyleBackColor = true;
             // 
             // btnConfirmar
             // 
             this.btnConfirmar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnConfirmar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnConfirmar.Image = ((System.Drawing.Image)(resources.GetObject("btnConfirmar.Image")));
-            this.btnConfirmar.Location = new System.Drawing.Point(622, 367);
+            this.btnConfirmar.Location = new System.Drawing.Point(622, 319);
             this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(81, 49);
+            this.btnConfirmar.Size = new System.Drawing.Size(81, 150);
             this.btnConfirmar.TabIndex = 6;
-            this.btnConfirmar.UseVisualStyleBackColor = true;
+            this.toolTip1.SetToolTip(this.btnConfirmar, "Confirmar pedido");
+            this.btnConfirmar.UseVisualStyleBackColor = false;
             // 
             // dgvDetallePedido
             // 
@@ -232,9 +239,9 @@
             this.txtListosParaServir.BackColor = System.Drawing.Color.White;
             this.txtListosParaServir.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtListosParaServir.ForeColor = System.Drawing.Color.Black;
-            this.txtListosParaServir.Location = new System.Drawing.Point(13, 13);
+            this.txtListosParaServir.Location = new System.Drawing.Point(14, 13);
             this.txtListosParaServir.Name = "txtListosParaServir";
-            this.txtListosParaServir.Size = new System.Drawing.Size(573, 28);
+            this.txtListosParaServir.Size = new System.Drawing.Size(572, 28);
             this.txtListosParaServir.TabIndex = 7;
             this.txtListosParaServir.Text = "DETALLES DE PEDIDO LISTOS PARA SERVIR";
             this.txtListosParaServir.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -316,5 +323,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label txtUsuario;
         private System.Windows.Forms.Label lblUsuarioLogeado;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
