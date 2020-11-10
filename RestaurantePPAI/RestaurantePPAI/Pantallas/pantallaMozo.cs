@@ -46,5 +46,7 @@ namespace RestaurantePPAI.Pantallas
         }
 
         public void visualizar() { cargarGrilla(dgvNotificados, gestor.DetallesPedidoNotificados); }
+
+
     }
 }

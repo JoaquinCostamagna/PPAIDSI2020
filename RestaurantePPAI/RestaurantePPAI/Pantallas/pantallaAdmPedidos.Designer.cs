@@ -43,12 +43,14 @@
             this.txtUsuario = new System.Windows.Forms.Label();
             this.lblUsuarioLogeado = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.estadoDetalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numeroDetalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreMenu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numeroMesa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tiempoEspera = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estadodeDetalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numDetalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -72,6 +74,7 @@
             this.dgvSeleccionados.BackgroundColor = System.Drawing.Color.White;
             this.dgvSeleccionados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSeleccionados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.estadodeDetalle,
             this.numDetalle,
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
@@ -132,6 +135,7 @@
             this.dgvDetallePedido.BackgroundColor = System.Drawing.Color.White;
             this.dgvDetallePedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDetallePedido.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.estadoDetalle,
             this.numeroDetalle,
             this.nombreProducto,
             this.nombreMenu,
@@ -225,6 +229,12 @@
             this.lblUsuarioLogeado.TabIndex = 13;
             this.lblUsuarioLogeado.Text = "    Oscar Ramirez\r\n\r\nResp Sector Comanda\r\n\r\n";
             // 
+            // estadoDetalle
+            // 
+            this.estadoDetalle.HeaderText = "Estado";
+            this.estadoDetalle.Name = "estadoDetalle";
+            this.estadoDetalle.ReadOnly = true;
+            // 
             // numeroDetalle
             // 
             this.numeroDetalle.HeaderText = "Numero de Detalle";
@@ -267,6 +277,12 @@
             this.tiempoEspera.HeaderText = "Tiempo De Espera";
             this.tiempoEspera.Name = "tiempoEspera";
             this.tiempoEspera.ReadOnly = true;
+            // 
+            // estadodeDetalle
+            // 
+            this.estadodeDetalle.HeaderText = "Estado";
+            this.estadodeDetalle.Name = "estadodeDetalle";
+            this.estadodeDetalle.ReadOnly = true;
             // 
             // numDetalle
             // 
@@ -352,12 +368,14 @@
         private System.Windows.Forms.Label txtUsuario;
         private System.Windows.Forms.Label lblUsuarioLogeado;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estadodeDetalle;
         private System.Windows.Forms.DataGridViewTextBoxColumn numDetalle;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn tiempoDeEspera;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estadoDetalle;
         private System.Windows.Forms.DataGridViewTextBoxColumn numeroDetalle;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreMenu;

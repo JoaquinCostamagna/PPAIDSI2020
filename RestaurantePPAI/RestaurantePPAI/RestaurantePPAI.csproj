@@ -57,6 +57,12 @@
     <Compile Include="Entidades\Pedido\Pedido.cs" />
     <Compile Include="Entidades\Producto.cs" />
     <Compile Include="Entidades\ProductoCarta.cs" />
+    <Compile Include="Pantallas\frmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\frmPrincipal.Designer.cs">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pantallas\pantallaAdmPedidos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +78,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Pantallas\frmPrincipal.resx">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pantallas\pantallaAdmPedidos.resx">
       <DependentUpon>pantallaAdmPedidos.cs</DependentUpon>
     </EmbeddedResource>

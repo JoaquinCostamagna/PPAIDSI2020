@@ -17,7 +17,7 @@ namespace RestaurantePPAI.Entidades
             return new HistorialEstado(fechaHoraInicio, estado);
         }
 
-        public void notificar(DateTime fechaHoraInicio, DetallePedido detalle, List<HistorialEstado> historiales)
+        public override void notificar(DateTime fechaHoraInicio, DetallePedido detalle, List<HistorialEstado> historiales)
         {
             foreach (HistorialEstado historial in historiales)
                 if (historial.FechaHoraFin == null)

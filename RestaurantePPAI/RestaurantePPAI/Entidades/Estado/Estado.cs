@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RestaurantePPAI.Entidades
 {
-    class Estado
+    abstract class Estado
     {
         private string ambito;
         private string nombre;
@@ -60,8 +60,8 @@ namespace RestaurantePPAI.Entidades
 
         public bool esPendPrep() { return false; }
 
-        //public void finalizar(DateTime fechaHoraActual, DetallePedido detalle, List<HistorialEstado> historiales) { }
+        public virtual void finalizar(DateTime fechaHoraActual, DetallePedido detalle, List<HistorialEstado> historiales) { }
 
-        //public void notificar(DateTime fechaHoraActual, DetallePedido detalle, List<HistorialEstado> historiales) { }
+        public virtual void notificar(DateTime fechaHoraActual, DetallePedido detalle, List<HistorialEstado> historiales) { }
     }
 }

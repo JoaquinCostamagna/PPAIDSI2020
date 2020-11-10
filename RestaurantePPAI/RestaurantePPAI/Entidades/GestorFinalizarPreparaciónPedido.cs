@@ -13,12 +13,19 @@ namespace RestaurantePPAI.Entidades
         private List<DetallePedido> detallesPedidoEnPreparacion;
         private List<DetallePedido> detallesPedidoNotificados;
         private List<DetallePedido> detallesPedidoAServir;
+        private pantallaAdmPedidos admPedidos;
+        private List<pantallaMozo> pantallaMozos;
 
         public GestorFinalizarPreparaciónPedido()
         {
             this.detallesPedidoEnPreparacion = new List<DetallePedido>();
             this.detallesPedidoNotificados = new List<DetallePedido>();
             this.detallesPedidoAServir = new List<DetallePedido>();
+            this.pantallaMozos = new List<pantallaMozo>();
+            this.pantallaMozos.Add(new pantallaMozo());
+            this.admPedidos = new pantallaAdmPedidos();
+            this.admPedidos.Gestor = this;
+            admPedidos.ShowDialog();
         }
 
         public List<DetallePedido> DetallesPedidoNotificados { get => detallesPedidoNotificados; set => detallesPedidoNotificados = value; }
@@ -31,6 +38,10 @@ namespace RestaurantePPAI.Entidades
                 {
                     detalle.finalizar(DateTime.Now);
                 }
+            
+            admPedidos.actualizarGrillas();
+            
+            System.Threading.Thread.Sleep(3000);
             publicarPedidosAServir();
 
         }
@@ -51,11 +62,7 @@ namespace RestaurantePPAI.Entidades
 
         public void publicarPedidosAServir()
         {
-            pantallaMozo pantallaMozo = new pantallaMozo();
-            pantallaMozo.Gestor = this;
-
-            foreach (DetallePedido detalle in DetallesPedidoAServir)
-                            detalle.notificar(DateTime.Now);
+                       
 
             DetallePedido[] detalles = new DetallePedido[DetallesPedidoAServir.Count];
             DetallesPedidoAServir.CopyTo(detalles);
@@ -63,12 +70,22 @@ namespace RestaurantePPAI.Entidades
             foreach (DetallePedido detalle in detalles)
                 DetallesPedidoNotificados.Add(detalle);
 
-            DetallesPedidoAServir.Clear();
+            foreach (DetallePedido detalle in DetallesPedidoNotificados)
+                detalle.notificar(DateTime.Now);
 
-            
 
-            pantallaMozo.Show();
+            admPedidos.actualizarGrillas();
 
+            foreach (pantallaMozo pantalla in pantallaMozos)
+            {
+                pantalla.Gestor = this;
+                pantalla.Show();
+            }
+
+            System.Threading.Thread.Sleep(1000);
+            detallesPedidoAServir.Clear();
+            admPedidos.actualizarGrillas();
         }
-    }
+
+      }
 }
