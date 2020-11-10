@@ -46,18 +46,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entidades\EnPreparacion.cs" />
-    <Compile Include="Entidades\Estado.cs" />
-    <Compile Include="Entidades\HistorialEstado.cs" />
-    <Compile Include="Entidades\ListoParaServir.cs" />
-    <Compile Include="Entidades\Notificado.cs" />
+    <Compile Include="Entidades\Estado\EnPreparacion.cs" />
+    <Compile Include="Entidades\Estado\Estado.cs" />
+    <Compile Include="Entidades\GestorFinalizarPreparaciónPedido.cs" />
+    <Compile Include="Entidades\Estado\HistorialEstado.cs" />
+    <Compile Include="Entidades\Estado\ListoParaServir.cs" />
+    <Compile Include="Entidades\Estado\Notificado.cs" />
+    <Compile Include="Entidades\MenuRestaurante.cs" />
+    <Compile Include="Entidades\Mesa.cs" />
+    <Compile Include="Entidades\Pedido\Pedido.cs" />
+    <Compile Include="Entidades\Producto.cs" />
+    <Compile Include="Entidades\ProductoCarta.cs" />
     <Compile Include="pantallaAdmPedidos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="pantallaAdmPedidos.Designer.cs">
       <DependentUpon>pantallaAdmPedidos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Entidades\DetallePedido.cs" />
+    <Compile Include="Entidades\Pedido\DetallePedido.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="pantallaAdmPedidos.resx">

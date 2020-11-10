@@ -19,9 +19,17 @@ namespace RestaurantePPAI.Entidades
             return new HistorialEstado(fechaHoraInicio, estado);
         }
 
-        public void finalizar(DateTime fechaHoraActual, DetallePedido detalle) 
+
+        public void finalizar(DateTime fechaHoraActual, DetallePedido detalle, List<HistorialEstado> historiales) 
         {
-            //implementar
+
+            
+                
+            ListoParaServir nuevoEstado = crearEstadoNuevo();
+            HistorialEstado nuevoHistorial = crearHistorialNuevo(fechaHoraActual, nuevoEstado);
+            detalle.agregarHistorial(nuevoHistorial);
+            detalle.EstadoActual = nuevoEstado;
+
         }
     }
 }
