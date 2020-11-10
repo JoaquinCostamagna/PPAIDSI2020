@@ -1,4 +1,5 @@
 ﻿using RestaurantePPAI.Entidades;
+using RestaurantePPAI.Pantallas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -63,7 +64,9 @@ namespace RestaurantePPAI
             {
                 string numDetalleSeleccionado = dgvDetallePedido.CurrentRow.Cells[0].Value.ToString();
 
-                DetallePedido detalleSeleccionado;
+                gestor.moverDetalle(numDetalleSeleccionado, gestor.DetallesPedidoEnPreparacion, gestor.DetallesPedidoAServir);
+
+                /*DetallePedido detalleSeleccionado;
 
                 for (int i = 0; i<gestor.DetallesPedidoEnPreparacion.Count; i++)
                     if (gestor.DetallesPedidoEnPreparacion[i].NumDetalle == numDetalleSeleccionado)
@@ -73,7 +76,7 @@ namespace RestaurantePPAI
                         gestor.DetallesPedidoAServir.Add(detalleSeleccionado);
                         break;
                     }
-
+                */
                 cargarGrilla(dgvDetallePedido, gestor.DetallesPedidoEnPreparacion);
                 cargarGrilla(dgvSeleccionados, gestor.DetallesPedidoAServir);
             }
@@ -87,16 +90,9 @@ namespace RestaurantePPAI
             {
                 string numDetalleSeleccionado = dgvSeleccionados.CurrentRow.Cells[0].Value.ToString();
 
-                DetallePedido detalleSeleccionado;
 
-                for (int i = 0; i < gestor.DetallesPedidoAServir.Count; i++)
-                    if (gestor.DetallesPedidoAServir[i].NumDetalle == numDetalleSeleccionado)
-                    {
-                        detalleSeleccionado = gestor.DetallesPedidoAServir[i];
-                        gestor.DetallesPedidoAServir.RemoveAt(i);
-                        gestor.DetallesPedidoEnPreparacion.Add(detalleSeleccionado);
-                        break;
-                    }
+
+                gestor.moverDetalle(numDetalleSeleccionado, gestor.DetallesPedidoAServir, gestor.DetallesPedidoEnPreparacion);
 
                 cargarGrilla(dgvDetallePedido, gestor.DetallesPedidoEnPreparacion);
                 cargarGrilla(dgvSeleccionados, gestor.DetallesPedidoAServir);
@@ -111,7 +107,8 @@ namespace RestaurantePPAI
                 MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             { 
                 gestor.actualizarEstadoDetallePedido();
-
+                cargarGrilla(dgvDetallePedido, gestor.DetallesPedidoEnPreparacion);
+                cargarGrilla(dgvSeleccionados, gestor.DetallesPedidoAServir);
             }
         }
     }

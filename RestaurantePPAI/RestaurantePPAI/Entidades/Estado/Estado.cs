@@ -60,8 +60,8 @@ namespace RestaurantePPAI.Entidades
 
         public bool esPendPrep() { return false; }
 
-        public void finalizar(DateTime fechaHoraActual, DetallePedido detalle, List<HistorialEstado> historiales) { }
+        //public void finalizar(DateTime fechaHoraActual, DetallePedido detalle, List<HistorialEstado> historiales) { }
 
-        public void notificar(DateTime fechaHoraActual, DetallePedido detalle, List<HistorialEstado> historiales) { }
+        //public void notificar(DateTime fechaHoraActual, DetallePedido detalle, List<HistorialEstado> historiales) { }
     }
 }

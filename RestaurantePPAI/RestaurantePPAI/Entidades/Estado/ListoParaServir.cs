@@ -28,5 +28,6 @@ namespace RestaurantePPAI.Entidades
             detalle.EstadoActual = nuevoEstado;
         }
 
+        public bool esListoParaServir() { return true; }
     }
 }

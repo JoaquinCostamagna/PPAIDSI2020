@@ -22,14 +22,17 @@ namespace RestaurantePPAI.Entidades
 
         public void finalizar(DateTime fechaHoraActual, DetallePedido detalle, List<HistorialEstado> historiales) 
         {
+            foreach (HistorialEstado historial in historiales)
+                if (historial.FechaHoraFin == null)
+                    historial.FechaHoraFin = fechaHoraActual;
 
-            
-                
             ListoParaServir nuevoEstado = crearEstadoNuevo();
             HistorialEstado nuevoHistorial = crearHistorialNuevo(fechaHoraActual, nuevoEstado);
             detalle.agregarHistorial(nuevoHistorial);
             detalle.EstadoActual = nuevoEstado;
 
         }
+
+        public bool esEnPreparacion() { return true; }
     }
 }
