@@ -64,10 +64,19 @@
       <DependentUpon>pantallaAdmPedidos.cs</DependentUpon>
     </Compile>
     <Compile Include="Entidades\Pedido\DetallePedido.cs" />
+    <Compile Include="Pantallas\pantallaMozo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pantallas\pantallaMozo.Designer.cs">
+      <DependentUpon>pantallaMozo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Pantallas\pantallaAdmPedidos.resx">
       <DependentUpon>pantallaAdmPedidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pantallas\pantallaMozo.resx">
+      <DependentUpon>pantallaMozo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
