@@ -57,16 +57,16 @@
     <Compile Include="Entidades\Pedido\Pedido.cs" />
     <Compile Include="Entidades\Producto.cs" />
     <Compile Include="Entidades\ProductoCarta.cs" />
-    <Compile Include="pantallaAdmPedidos.cs">
+    <Compile Include="Pantallas\pantallaAdmPedidos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="pantallaAdmPedidos.Designer.cs">
+    <Compile Include="Pantallas\pantallaAdmPedidos.Designer.cs">
       <DependentUpon>pantallaAdmPedidos.cs</DependentUpon>
     </Compile>
     <Compile Include="Entidades\Pedido\DetallePedido.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="pantallaAdmPedidos.resx">
+    <EmbeddedResource Include="Pantallas\pantallaAdmPedidos.resx">
       <DependentUpon>pantallaAdmPedidos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

@@ -111,6 +111,7 @@ namespace RestaurantePPAI
                 MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             { 
                 gestor.actualizarEstadoDetallePedido();
+
             }
         }
     }
