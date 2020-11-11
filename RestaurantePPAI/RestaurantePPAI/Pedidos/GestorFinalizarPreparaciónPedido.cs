@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using RestaurantePPAI.Entidades;
 using RestaurantePPAI.Pantallas;
+using RestaurantePPAI.Persistencia;
 
 namespace RestaurantePPAI.Pedidos
 {
@@ -84,5 +85,17 @@ namespace RestaurantePPAI.Pedidos
             admPedidos.actualizarGrillas();
         }
 
+        public void buscarDetallesPedidoEnPreparacion()
+        {
+            PersistenciaDatos datos = new PersistenciaDatos();
+
+            foreach(DetallePedido detalle in datos.Detalles)
+            {
+                if (detalle.EstadoActual.esEnPreparacion() && detalle.EstadoActual.esAmbitoDetalle())
+                    this.detallesPedidoEnPreparacion.Add(detalle);
+            }
+        }
+
+        public void finalizarPedido() { buscarDetallesPedidoEnPreparacion(); }
       }
 }

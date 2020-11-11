@@ -35,17 +35,8 @@ namespace RestaurantePPAI.Pedidos
 
         private void pantallaAdmPedidos_Load(object sender, EventArgs e)
         {
-            Gestor.DetallesPedidoEnPreparacion.Add(new DetallePedido(new ProductoCarta(new Producto("Milanesa Caballo")), new MenuRestaurante("Milanesas"), 1, 20, DateTime.Now.Subtract(new TimeSpan(0,15,0))));
-            Gestor.DetallesPedidoEnPreparacion.Add(new DetallePedido(new ProductoCarta(new Producto("Ravioles de Salmon")), new MenuRestaurante("Pastas"), 3, 15, DateTime.Now.Subtract(new TimeSpan(0,20,30))));
-            Gestor.DetallesPedidoEnPreparacion.Add(new DetallePedido(new ProductoCarta(new Producto("Lomo de bife")), new MenuRestaurante("Carnes"), 1, 2, DateTime.Now.Subtract(new TimeSpan(0,40,15))));
-            Gestor.DetallesPedidoEnPreparacion.Add(new DetallePedido(new ProductoCarta(new Producto("Fideos Moñito")), new MenuRestaurante( "Pastas"), 1, 18, DateTime.Now.Subtract(new TimeSpan(0,25,16))));
-            Gestor.DetallesPedidoEnPreparacion.Add(new DetallePedido(new ProductoCarta(new Producto("Salmon Rosado")), new MenuRestaurante("Pescados"), 2, 10, DateTime.Now.Subtract(new TimeSpan(0,10,0))));
-            Gestor.DetallesPedidoEnPreparacion.Add(new DetallePedido(new ProductoCarta(new Producto("Sushi 40 piezas")), new MenuRestaurante("Pescados"), 1, 9, DateTime.Now.Subtract(new TimeSpan(0,20,0))));
-            Gestor.DetallesPedidoEnPreparacion.Add(new DetallePedido(new ProductoCarta(new Producto("Milanesa Napolitana")), new MenuRestaurante("Milanesas"), 10, 3, DateTime.Now.Subtract(new TimeSpan(0,9,0))));
-            Gestor.DetallesPedidoEnPreparacion.Add(new DetallePedido(new ProductoCarta(new Producto("Ñoquis de naranja")), new MenuRestaurante("Pasta"), 4, 12, DateTime.Now.Subtract(new TimeSpan(1,0,0))));
-            Gestor.DetallesPedidoEnPreparacion.Add(new DetallePedido(new ProductoCarta(new Producto("Lomo de bife")), new MenuRestaurante("Carnes"), 2, 20, DateTime.Now.Subtract(new TimeSpan(0,45,50))));
-            Gestor.DetallesPedidoEnPreparacion.Add(new DetallePedido(new ProductoCarta(new Producto("Milanesa Napolitana")), new MenuRestaurante("Milanesas"), 2, 18, DateTime.Now.Subtract(new TimeSpan(0,30,30))));
-            cargarGrilla(dgvDetallePedido, Gestor.DetallesPedidoEnPreparacion);
+            gestor.finalizarPedido();
+            actualizarGrillas();
         }
 
         private void cargarGrilla(DataGridView grilla, List<DetallePedido> detalles)
@@ -59,7 +50,7 @@ namespace RestaurantePPAI.Pedidos
                                 detalle.Producto.Producto.Nombre,
                                 detalle.Menu.Nombre,
                                 detalle.Cantidad.ToString(),
-                                detalle.NumeroMesa.ToString(),
+                                detalle.Mesa.Numero.ToString(),
                                 detalle.conocerTiempoPresentacion().ToString(@"hh\:mm\:ss"));
             }
             grilla.Sort(grilla.Columns[6], ListSortDirection.Descending);

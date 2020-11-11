@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms.VisualStyles;
+using RestaurantePPAI.Ubicaciones;
 
 namespace RestaurantePPAI.Pedidos
 {
@@ -21,15 +22,15 @@ namespace RestaurantePPAI.Pedidos
         private TimeSpan tiempoPresentacion;
         private List<HistorialEstado> historial;
         private Estado estadoActual;
-        private int numeroMesa;
+        private Mesa mesa;
 
-        public DetallePedido(ProductoCarta producto, MenuRestaurante menu, int cantidad, int numeroMesa, DateTime hora)
+        public DetallePedido(ProductoCarta producto, MenuRestaurante menu, int cantidad, Mesa mesa, DateTime hora)
         {
             this.NumDetalle = cantidadTotalDetalles.ToString();
             this.producto = producto;
             this.menu = menu;
             this.cantidad = cantidad;
-            this.NumeroMesa = numeroMesa;
+            this.Mesa = mesa;
             this.hora = hora;
             this.estadoActual = new EnPreparacion();
             this.Historial = new List<HistorialEstado>();
@@ -46,7 +47,7 @@ namespace RestaurantePPAI.Pedidos
         public ProductoCarta Producto { get => producto; set => producto = value; }
         public MenuRestaurante Menu { get => menu; set => menu = value; }
         public string NumDetalle { get => numDetalle; set => numDetalle = value; }
-        public int NumeroMesa { get => numeroMesa; set => numeroMesa = value; }
+        internal Mesa Mesa { get => mesa; set => mesa = value; }
 
         public void asignar() { }
         public void cancelar() { }

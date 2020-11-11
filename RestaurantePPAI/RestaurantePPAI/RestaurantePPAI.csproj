@@ -52,6 +52,7 @@
     <Compile Include="Entidades\Estado\HistorialEstado.cs" />
     <Compile Include="Entidades\Estado\ListoParaServir.cs" />
     <Compile Include="Entidades\Estado\Notificado.cs" />
+    <Compile Include="Persistencia\PersistenciaDatos.cs" />
     <Compile Include="ProductosCartasMenus\MenuRestaurante.cs" />
     <Compile Include="Ubicaciones\Mesa.cs" />
     <Compile Include="Pedidos\Pedido.cs" />

@@ -39,7 +39,7 @@ namespace RestaurantePPAI.Pedidos
                                 detalle.Producto.Producto.Nombre,
                                 detalle.Menu.Nombre,
                                 detalle.Cantidad.ToString(),
-                                detalle.NumeroMesa.ToString(),
+                                detalle.Mesa.Numero.ToString(),
                                 detalle.conocerTiempoPresentacion().ToString(@"hh\:mm\:ss")) ;
             }
             grilla.Sort(grilla.Columns[5], ListSortDirection.Descending);

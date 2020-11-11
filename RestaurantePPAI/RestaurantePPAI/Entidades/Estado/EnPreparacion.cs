@@ -31,6 +31,8 @@ namespace RestaurantePPAI.Entidades
             detalle.EstadoActual = nuevoEstado;
         }
 
-        public bool esEnPreparacion() { return true; }
+        public override bool esEnPreparacion() { return true; }
+
+        public override bool esAmbitoDetalle() { return true; }
     }
 }

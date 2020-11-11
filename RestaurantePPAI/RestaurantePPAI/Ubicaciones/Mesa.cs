@@ -18,5 +18,14 @@ namespace RestaurantePPAI.Ubicaciones
         private int numero;
         private int ordenEnPlano;
         private Pedido pedido;
+
+        public Mesa(int numero)
+        {
+            this.Numero = numero;
+        }
+
+        public int Numero { get => numero; set => numero = value; }
     }
+
+    
 }

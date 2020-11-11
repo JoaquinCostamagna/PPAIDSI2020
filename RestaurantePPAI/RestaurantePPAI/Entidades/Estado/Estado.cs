@@ -21,45 +21,45 @@ namespace RestaurantePPAI.Entidades
         public string Ambito { get => ambito; set => ambito = value; }
         public string Nombre { get => nombre; set => nombre = value; }
 
-        public void asignar() { }
+        public virtual void asignar() { }
 
-        public void cancelar() { }
+        public virtual void cancelar() { }
 
-        public void entregar() { }
+        public virtual void entregar() { }
 
-        public bool esAbierta() { return false; }
+        public virtual bool esAbierta() { return false; }
 
-        public bool esActiva() { return false; }
+        public virtual bool esActiva() { return false; }
 
-        public bool esAbierto() { return false; }
+        public virtual bool esAbierto() { return false; }
 
-        public bool esAmbitoDetalle() { return false; }
+        public virtual bool esAmbitoDetalle() { return false; }
 
-        public bool esAmbitoMesa() { return false; }
+        public virtual bool esAmbitoMesa() { return false; }
 
-        public bool esAmbitoPedido() { return false; }
+        public virtual bool esAmbitoPedido() { return false; }
 
-        public bool esAmbitoReserva() { return false; }
+        public virtual bool esAmbitoReserva() { return false; }
 
-        public bool esConfirmada() { return false; }
+        public virtual bool esConfirmada() { return false; }
 
-        public bool esConPedidoGenerado() { return false; }
+        public virtual bool esConPedidoGenerado() { return false; }
 
-        public bool esCreada() { return false; }
+        public virtual bool esCreada() { return false; }
 
-        public bool esCreado() { return false; }
+        public virtual bool esCreado() { return false; }
 
-        public bool esEnPreparacion() { return false; }
+        public virtual bool esEnPreparacion() { return false; }
 
-        public bool esListoParaServir() { return false; }
+        public virtual bool esListoParaServir() { return false; }
 
-        public bool esNotificada() { return false; }
+        public virtual bool esNotificada() { return false; }
 
-        public bool esNotificado() { return false; }
+        public virtual bool esNotificado() { return false; }
 
-        public bool esPendienteCumplimentar() { return false; }
+        public virtual bool esPendienteCumplimentar() { return false; }
 
-        public bool esPendPrep() { return false; }
+        public virtual bool esPendPrep() { return false; }
 
         public virtual void finalizar(DateTime fechaHoraActual, DetallePedido detalle, List<HistorialEstado> historiales) { }
 
