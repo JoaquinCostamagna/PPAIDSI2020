@@ -22,7 +22,7 @@ namespace RestaurantePPAI.Entidades
         public override void finalizar(DateTime fechaHoraActual, DetallePedido detalle, List<HistorialEstado> historiales) 
         {
             foreach (HistorialEstado historial in historiales)
-                if (historial.FechaHoraFin == null)
+                if (historial.esUltimoHistorial())
                     historial.FechaHoraFin = fechaHoraActual;
 
             ListoParaServir nuevoEstado = crearEstadoNuevo();

@@ -35,15 +35,18 @@ namespace RestaurantePPAI.Pedidos
 
         public void actualizarEstadoDetallePedido() 
         {
-            foreach(DetallePedido detalle in DetallesPedidoAServir)
+            while (DetallesPedidoAServir.Count > 0)
                 {
-                    detalle.finalizar(DateTime.Now);
+                    DetallesPedidoAServir[0].finalizar(DateTime.Now);
+                    admPedidos.actualizarGrillas();
+                    publicarPedidosAServir();
                 }
+            foreach (pantallaMozo pantalla in pantallaMozos)
+                pantalla.notificar();
             
-            admPedidos.actualizarGrillas();
             
-            System.Threading.Thread.Sleep(3000);
-            publicarPedidosAServir();
+            //System.Threading.Thread.Sleep(3000);
+            
         }
 
 
@@ -62,26 +65,27 @@ namespace RestaurantePPAI.Pedidos
 
         public void publicarPedidosAServir()
         {
-            DetallePedido[] detalles = new DetallePedido[DetallesPedidoAServir.Count];
-            DetallesPedidoAServir.CopyTo(detalles);
 
-            foreach (DetallePedido detalle in detalles)
-                DetallesPedidoNotificados.Add(detalle);
-
-            foreach (DetallePedido detalle in DetallesPedidoNotificados)
-                detalle.notificar(DateTime.Now);
+            DetallePedido detalle = DetallesPedidoAServir[0];
+            DetallesPedidoNotificados.Add(detalle);
+            detallesPedidoAServir.RemoveAt(0);
 
 
-            admPedidos.actualizarGrillas();
 
             foreach (pantallaMozo pantalla in pantallaMozos)
             {
                 pantalla.Gestor = this;
                 pantalla.Show();
+                pantalla.visualizar();
             }
 
-            System.Threading.Thread.Sleep(1000);
-            detallesPedidoAServir.Clear();
+            
+            detalle.notificar(DateTime.Now);
+
+
+            admPedidos.actualizarGrillas();
+
+            //System.Threading.Thread.Sleep(1000);
             admPedidos.actualizarGrillas();
         }
 

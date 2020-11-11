@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -26,7 +27,7 @@ namespace RestaurantePPAI.Pedidos
 
         private void pantallaMozo_Load(object sender, EventArgs e)
         {
-            visualizar();
+            //visualizar();
         }
 
         private void cargarGrilla(DataGridView grilla, List<DetallePedido> detalles)
@@ -83,6 +84,23 @@ namespace RestaurantePPAI.Pedidos
             return tabla;
         }
 
-        public void visualizar() { cargarGrilla(dgvNotificados, gestor.DetallesPedidoNotificados); }
+        internal void notificar()
+        {
+            this.BringToFront();
+            SystemSounds.Exclamation.Play();
+        }
+
+        public void visualizar() 
+        {
+            this.Refresh();
+            cargarGrilla(dgvNotificados, gestor.DetallesPedidoNotificados);
+            this.Refresh();
+        }
+
+        private void pantallaMozo_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Hide();
+            e.Cancel = true;    // Do not close the form
+        }
     }
 }
