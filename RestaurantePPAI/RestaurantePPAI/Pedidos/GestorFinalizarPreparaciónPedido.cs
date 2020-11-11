@@ -36,11 +36,12 @@ namespace RestaurantePPAI.Pedidos
         public void actualizarEstadoDetallePedido() 
         {
             while (DetallesPedidoAServir.Count > 0)
-                {
-                    DetallesPedidoAServir[0].finalizar(DateTime.Now);
-                    admPedidos.actualizarGrillas();
-                    publicarPedidosAServir();
-                }
+            {
+                DetallesPedidoAServir[0].finalizar(DateTime.Now);
+                //System.Threading.Thread.Sleep(1000);
+                admPedidos.actualizarGrillas();
+                publicarPedidosAServir();
+            }
             foreach (pantallaMozo pantalla in pantallaMozos)
                 pantalla.notificar();
             
@@ -68,9 +69,8 @@ namespace RestaurantePPAI.Pedidos
 
             DetallePedido detalle = DetallesPedidoAServir[0];
             DetallesPedidoNotificados.Add(detalle);
-            detallesPedidoAServir.RemoveAt(0);
 
-
+            //System.Threading.Thread.Sleep(1000);
 
             foreach (pantallaMozo pantalla in pantallaMozos)
             {
@@ -80,13 +80,19 @@ namespace RestaurantePPAI.Pedidos
             }
 
             
-            detalle.notificar(DateTime.Now);
 
+            
+
+            detalle.notificar(DateTime.Now);
 
             admPedidos.actualizarGrillas();
 
             //System.Threading.Thread.Sleep(1000);
+
+            detallesPedidoAServir.RemoveAt(0);
+
             admPedidos.actualizarGrillas();
+
         }
 
         public void buscarDetallesPedidoEnPreparacion()
