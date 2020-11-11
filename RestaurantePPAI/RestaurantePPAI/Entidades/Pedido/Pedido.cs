@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using RestaurantePPAI.Entidades;
 
-namespace RestaurantePPAI.Pedidos
+namespace RestaurantePPAI.Entidades
 {
     class Pedido
     {
@@ -14,5 +13,7 @@ namespace RestaurantePPAI.Pedidos
         private DateTime fechaHoraPed;
         private List<HistorialEstado> historial;
         private int nroPedido;
+
+
     }
 }

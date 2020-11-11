@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using RestaurantePPAI.Pedidos;
 
 namespace RestaurantePPAI.Entidades
 {
@@ -18,7 +17,7 @@ namespace RestaurantePPAI.Entidades
             return new HistorialEstado(fechaHoraInicio, estado);
         }
 
-        public override void notificar(DateTime fechaHoraInicio, DetallePedido detalle, List<HistorialEstado> historiales)
+        public void notificar(DateTime fechaHoraInicio, DetallePedido detalle, List<HistorialEstado> historiales)
         {
             foreach (HistorialEstado historial in historiales)
                 if (historial.FechaHoraFin == null)
@@ -29,6 +28,5 @@ namespace RestaurantePPAI.Entidades
             detalle.EstadoActual = nuevoEstado;
         }
 
-        public override bool esListoParaServir() { return true; }
     }
 }

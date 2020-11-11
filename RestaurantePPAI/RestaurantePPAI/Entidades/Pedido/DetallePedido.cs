@@ -1,14 +1,12 @@
 ﻿using RestaurantePPAI.Entidades;
-using RestaurantePPAI.ProductosCartasMenus;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms.VisualStyles;
-using RestaurantePPAI.Ubicaciones;
 
-namespace RestaurantePPAI.Pedidos
+namespace RestaurantePPAI
 {
     class DetallePedido
     {
@@ -22,15 +20,15 @@ namespace RestaurantePPAI.Pedidos
         private TimeSpan tiempoPresentacion;
         private List<HistorialEstado> historial;
         private Estado estadoActual;
-        private Mesa mesa;
+        private int numeroMesa;
 
-        public DetallePedido(ProductoCarta producto, MenuRestaurante menu, int cantidad, Mesa mesa, DateTime hora)
+        public DetallePedido(ProductoCarta producto, MenuRestaurante menu, int cantidad, int numeroMesa, DateTime hora)
         {
             this.NumDetalle = cantidadTotalDetalles.ToString();
             this.producto = producto;
             this.menu = menu;
             this.cantidad = cantidad;
-            this.Mesa = mesa;
+            this.NumeroMesa = numeroMesa;
             this.hora = hora;
             this.estadoActual = new EnPreparacion();
             this.Historial = new List<HistorialEstado>();
@@ -42,12 +40,12 @@ namespace RestaurantePPAI.Pedidos
         public double Precio { get => precio; set => precio = value; }
         public DateTime Hora { get => hora; set => hora = value; }
         public TimeSpan TiempoPresentacion { get => tiempoPresentacion; set => tiempoPresentacion = value; }
-        public List<HistorialEstado> Historial { get => historial; set => historial = value; }
-        public Estado EstadoActual { get => estadoActual; set => estadoActual = value; }
-        public ProductoCarta Producto { get => producto; set => producto = value; }
-        public MenuRestaurante Menu { get => menu; set => menu = value; }
+        internal List<HistorialEstado> Historial { get => historial; set => historial = value; }
+        internal Estado EstadoActual { get => estadoActual; set => estadoActual = value; }
+        internal ProductoCarta Producto { get => producto; set => producto = value; }
+        internal MenuRestaurante Menu { get => menu; set => menu = value; }
         public string NumDetalle { get => numDetalle; set => numDetalle = value; }
-        internal Mesa Mesa { get => mesa; set => mesa = value; }
+        public int NumeroMesa { get => numeroMesa; set => numeroMesa = value; }
 
         public void asignar() { }
         public void cancelar() { }
@@ -57,6 +55,8 @@ namespace RestaurantePPAI.Pedidos
         public void notificar(DateTime fechaHoraActual) { estadoActual.notificar(fechaHoraActual, this, this.historial); }
 
         public TimeSpan conocerTiempoPresentacion() { return DateTime.Now - hora; }
+
+
         public void agregarHistorial(HistorialEstado nuevoHistorial) { historial.Add(nuevoHistorial); }
 
     }

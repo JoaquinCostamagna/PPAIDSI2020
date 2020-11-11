@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RestaurantePPAI.ProductosCartasMenus
+namespace RestaurantePPAI.Entidades
 {
     class ProductoCarta
     {

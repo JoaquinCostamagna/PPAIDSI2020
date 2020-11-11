@@ -10,6 +10,5 @@ namespace RestaurantePPAI.Entidades
     {
         public Notificado() : base("DetallePedido", "Notificado") { }
 
-        public override bool esNotificado() { return true; }
     }
 }
