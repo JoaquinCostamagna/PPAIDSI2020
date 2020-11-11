@@ -1,4 +1,4 @@
-﻿namespace RestaurantePPAI.Pantallas
+﻿namespace RestaurantePPAI.Pedidos
 {
     partial class pantallaMozo
     {
@@ -71,8 +71,8 @@
             // 
             this.dgvNotificados.AllowUserToAddRows = false;
             this.dgvNotificados.AllowUserToDeleteRows = false;
-            this.dgvNotificados.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgvNotificados.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvNotificados.BackgroundColor = System.Drawing.Color.White;
             this.dgvNotificados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -154,8 +154,8 @@
             // 
             // txtListosParaServir
             // 
-            this.txtListosParaServir.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtListosParaServir.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtListosParaServir.BackColor = System.Drawing.Color.White;
             this.txtListosParaServir.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -176,6 +176,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblUsuarioLogeado);
             this.Name = "pantallaMozo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "pantallaMozo";
             this.Load += new System.EventHandler(this.pantallaMozo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

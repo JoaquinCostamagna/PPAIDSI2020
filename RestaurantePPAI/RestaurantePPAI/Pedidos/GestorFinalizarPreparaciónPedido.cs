@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using RestaurantePPAI.Entidades;
 using RestaurantePPAI.Pantallas;
 
-namespace RestaurantePPAI.Entidades
+namespace RestaurantePPAI.Pedidos
 {
     class GestorFinalizarPreparaciónPedido
     {
@@ -43,7 +43,6 @@ namespace RestaurantePPAI.Entidades
             
             System.Threading.Thread.Sleep(3000);
             publicarPedidosAServir();
-
         }
 
 
@@ -62,8 +61,6 @@ namespace RestaurantePPAI.Entidades
 
         public void publicarPedidosAServir()
         {
-                       
-
             DetallePedido[] detalles = new DetallePedido[DetallesPedidoAServir.Count];
             DetallesPedidoAServir.CopyTo(detalles);
 

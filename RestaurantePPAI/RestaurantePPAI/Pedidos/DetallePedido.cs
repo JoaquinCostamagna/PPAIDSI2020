@@ -1,4 +1,5 @@
 ﻿using RestaurantePPAI.Entidades;
+using RestaurantePPAI.ProductosCartasMenus;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms.VisualStyles;
 
-namespace RestaurantePPAI
+namespace RestaurantePPAI.Pedidos
 {
     class DetallePedido
     {
@@ -55,8 +56,6 @@ namespace RestaurantePPAI
         public void notificar(DateTime fechaHoraActual) { estadoActual.notificar(fechaHoraActual, this, this.historial); }
 
         public TimeSpan conocerTiempoPresentacion() { return DateTime.Now - hora; }
-
-
         public void agregarHistorial(HistorialEstado nuevoHistorial) { historial.Add(nuevoHistorial); }
 
     }

@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using RestaurantePPAI.Entidades;
+using RestaurantePPAI.Pedidos;
 
-namespace RestaurantePPAI.Entidades
+namespace RestaurantePPAI.Ubicaciones
 {
     class Mesa
     {

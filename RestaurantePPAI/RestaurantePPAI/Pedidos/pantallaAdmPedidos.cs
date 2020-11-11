@@ -1,5 +1,6 @@
 ﻿using RestaurantePPAI.Entidades;
 using RestaurantePPAI.Pantallas;
+using RestaurantePPAI.ProductosCartasMenus;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace RestaurantePPAI
+namespace RestaurantePPAI.Pedidos
 {
     public partial class pantallaAdmPedidos : Form
     {

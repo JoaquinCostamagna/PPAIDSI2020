@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using RestaurantePPAI.Entidades;
 
-namespace RestaurantePPAI.Pantallas
+namespace RestaurantePPAI.Pedidos
 {
     public partial class pantallaMozo : Form
     {
@@ -46,7 +46,5 @@ namespace RestaurantePPAI.Pantallas
         }
 
         public void visualizar() { cargarGrilla(dgvNotificados, gestor.DetallesPedidoNotificados); }
-
-
     }
 }
