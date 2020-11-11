@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,18 +32,55 @@ namespace RestaurantePPAI.Pedidos
         private void cargarGrilla(DataGridView grilla, List<DetallePedido> detalles)
         {
             grilla.Rows.Clear();
+
+            DataTable tabla = cargarTablaCantidades(detalles);
+
+            for(int i = 0; i<tabla.Rows.Count; i++)           
+            {
+                grilla.Rows.Add(tabla.Rows[i][0].ToString(),
+                                tabla.Rows[i][1].ToString());
+            }
+
+        }
+
+        private int buscarMesa(DataTable tabla, int numeroMesa)
+        {
+            int pos = -1;
+            for(int i=0; i<tabla.Rows.Count;i++)
+            {
+                if(tabla.Rows[i][0].Equals(numeroMesa.ToString()))
+                {
+                    pos = i;
+                    break;
+                }
+            }
+            return pos;
+        }
+
+        private DataTable cargarTablaCantidades(List<DetallePedido> detalles)
+        {
+            DataTable tabla = new DataTable();
+            tabla.Columns.Add("Numero Mesa");
+            tabla.Columns.Add("Cantidad Productos");
+
             //for(int i = 0; i<lista.Count; i++)
             foreach (var detalle in detalles)
             {
-                grilla.Rows.Add(detalle.EstadoActual.Nombre,
-                                detalle.NumDetalle,
-                                detalle.Producto.Producto.Nombre,
-                                detalle.Menu.Nombre,
-                                detalle.Cantidad.ToString(),
-                                detalle.Mesa.Numero.ToString(),
-                                detalle.conocerTiempoPresentacion().ToString(@"hh\:mm\:ss")) ;
+                int pos = buscarMesa(tabla, detalle.Mesa.Numero);
+                if (pos != -1)
+                {
+                    int cantidad = Convert.ToInt32(tabla.Rows[pos][1]);
+                    cantidad += detalle.Cantidad;
+                    tabla.Rows[pos].SetField(1, cantidad);
+                }
+                else
+                {
+                    tabla.Rows.Add(detalle.Mesa.Numero,
+                                    detalle.Cantidad);
+                }
             }
-            grilla.Sort(grilla.Columns[5], ListSortDirection.Descending);
+
+            return tabla;
         }
 
         public void visualizar() { cargarGrilla(dgvNotificados, gestor.DetallesPedidoNotificados); }
