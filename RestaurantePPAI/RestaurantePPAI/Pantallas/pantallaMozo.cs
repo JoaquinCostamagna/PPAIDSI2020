@@ -16,11 +16,5 @@ namespace RestaurantePPAI.Pantallas
         {
             InitializeComponent();
         }
-
-        private void pantallaMozo_Load(object sender, EventArgs e)
-        {
-
-        }
-
     }
 }
