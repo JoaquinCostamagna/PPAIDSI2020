@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using RestaurantePPAI.Pedidos;
 
 namespace RestaurantePPAI.Entidades
 {
@@ -11,7 +12,6 @@ namespace RestaurantePPAI.Entidades
 
         public EnPreparacion() : base("DetallePedido", "En preparación") { }
        
-
         public ListoParaServir crearEstadoNuevo() { return new ListoParaServir(); }
 
         public HistorialEstado crearHistorialNuevo(DateTime fechaHoraInicio, Estado estado)
@@ -19,17 +19,20 @@ namespace RestaurantePPAI.Entidades
             return new HistorialEstado(fechaHoraInicio, estado);
         }
 
-
-        public void finalizar(DateTime fechaHoraActual, DetallePedido detalle, List<HistorialEstado> historiales) 
+        public override void finalizar(DateTime fechaHoraActual, DetallePedido detalle, List<HistorialEstado> historiales) 
         {
+            foreach (HistorialEstado historial in historiales)
+                if (historial.FechaHoraFin == null)
+                    historial.FechaHoraFin = fechaHoraActual;
 
-            
-                
             ListoParaServir nuevoEstado = crearEstadoNuevo();
             HistorialEstado nuevoHistorial = crearHistorialNuevo(fechaHoraActual, nuevoEstado);
             detalle.agregarHistorial(nuevoHistorial);
             detalle.EstadoActual = nuevoEstado;
-
         }
+
+        public override bool esEnPreparacion() { return true; }
+
+        public override bool esAmbitoDetalle() { return true; }
     }
 }

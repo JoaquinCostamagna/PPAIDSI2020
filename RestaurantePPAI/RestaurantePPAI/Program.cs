@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RestaurantePPAI.Pantallas;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace RestaurantePPAI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new pantallaAdmPedidos());
+            Application.Run(new frmPrincipal());
         }
     }
 }

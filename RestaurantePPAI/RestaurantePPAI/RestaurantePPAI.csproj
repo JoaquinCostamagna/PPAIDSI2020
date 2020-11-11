@@ -48,34 +48,44 @@
   <ItemGroup>
     <Compile Include="Entidades\Estado\EnPreparacion.cs" />
     <Compile Include="Entidades\Estado\Estado.cs" />
-    <Compile Include="Entidades\GestorFinalizarPreparaciónPedido.cs" />
+    <Compile Include="Pedidos\GestorFinalizarPreparaciónPedido.cs" />
     <Compile Include="Entidades\Estado\HistorialEstado.cs" />
     <Compile Include="Entidades\Estado\ListoParaServir.cs" />
     <Compile Include="Entidades\Estado\Notificado.cs" />
-    <Compile Include="Entidades\MenuRestaurante.cs" />
-    <Compile Include="Entidades\Mesa.cs" />
-    <Compile Include="Entidades\Pedido\Pedido.cs" />
-    <Compile Include="Entidades\Producto.cs" />
-    <Compile Include="Entidades\ProductoCarta.cs" />
-    <Compile Include="Pantallas\pantallaAdmPedidos.cs">
+    <Compile Include="Persistencia\PersistenciaDatos.cs" />
+    <Compile Include="ProductosCartasMenus\MenuRestaurante.cs" />
+    <Compile Include="Ubicaciones\Mesa.cs" />
+    <Compile Include="Pedidos\Pedido.cs" />
+    <Compile Include="ProductosCartasMenus\Producto.cs" />
+    <Compile Include="ProductosCartasMenus\ProductoCarta.cs" />
+    <Compile Include="Pantallas\frmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pantallas\pantallaAdmPedidos.Designer.cs">
+    <Compile Include="Pantallas\frmPrincipal.Designer.cs">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pedidos\pantallaAdmPedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pedidos\pantallaAdmPedidos.Designer.cs">
       <DependentUpon>pantallaAdmPedidos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Entidades\Pedido\DetallePedido.cs" />
-    <Compile Include="Pantallas\pantallaMozo.cs">
+    <Compile Include="Pedidos\DetallePedido.cs" />
+    <Compile Include="Pedidos\pantallaMozo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pantallas\pantallaMozo.Designer.cs">
+    <Compile Include="Pedidos\pantallaMozo.Designer.cs">
       <DependentUpon>pantallaMozo.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Pantallas\pantallaAdmPedidos.resx">
+    <EmbeddedResource Include="Pantallas\frmPrincipal.resx">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pedidos\pantallaAdmPedidos.resx">
       <DependentUpon>pantallaAdmPedidos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pantallas\pantallaMozo.resx">
+    <EmbeddedResource Include="Pedidos\pantallaMozo.resx">
       <DependentUpon>pantallaMozo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -100,5 +110,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
