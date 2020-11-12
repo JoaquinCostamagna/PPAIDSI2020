@@ -130,6 +130,7 @@
             this.pbxCampana.TabIndex = 17;
             this.pbxCampana.TabStop = false;
             this.pbxCampana.Visible = false;
+            this.pbxCampana.Click += new System.EventHandler(this.pbxCampana_Click);
             // 
             // pantallaMozo
             // 

@@ -88,7 +88,9 @@ namespace RestaurantePPAI.Pedidos
         {
             this.BringToFront();
             SystemSounds.Beep.Play();
+
             habilitarCampana(true);
+
         }
 
         private void habilitarCampana(bool x)
@@ -98,7 +100,6 @@ namespace RestaurantePPAI.Pedidos
 
         public void visualizar() 
         {
-            this.Refresh();
             cargarGrilla(dgvNotificados, gestor.DetallesPedidoNotificados);
             this.Refresh();
         }
@@ -106,7 +107,12 @@ namespace RestaurantePPAI.Pedidos
         private void pantallaMozo_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.Hide();
-            e.Cancel = true;    // Do not close the form
+            e.Cancel = true;
+        }
+
+        private void pbxCampana_Click(object sender, EventArgs e)
+        {
+            habilitarCampana(false);
         }
     }
 }
