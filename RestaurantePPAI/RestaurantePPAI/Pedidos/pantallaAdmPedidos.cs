@@ -68,7 +68,7 @@ namespace RestaurantePPAI.Pedidos
                 cargarGrilla(dgvSeleccionados, Gestor.DetallesPedidoAServir);
             }
             else
-                MessageBox.Show("Debe seleccionar una fila primero, salu2");
+                MessageBox.Show("Debe seleccionar un detalle para poder agregarlo.");
         }
 
         private void btnQuitar_Click(object sender, EventArgs e)
@@ -77,24 +77,29 @@ namespace RestaurantePPAI.Pedidos
             {
                 string numDetalleSeleccionado = dgvSeleccionados.CurrentRow.Cells[1].Value.ToString();
 
-
-
                 Gestor.moverDetalle(numDetalleSeleccionado, Gestor.DetallesPedidoAServir, Gestor.DetallesPedidoEnPreparacion);
 
                 actualizarGrillas();
             }
             else
-                MessageBox.Show("Debe seleccionar una fila primero, salu2");
+                MessageBox.Show("Debe seleccionar un detalle para poder quitarlo.");
         }
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Esta Seguro que desea finalizar estos pedidos", "Preparación de Pedidos",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
-            { 
-                Gestor.actualizarEstadoDetallePedido();
-                
+            if (dgvSeleccionados.Rows.Count > 0)
+            {
+                if (MessageBox.Show("¿Está seguro que desea finalizar estos detalles?", "Preparación de Pedidos",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                {
+                    Gestor.actualizarEstadoDetallePedido();
+                }
             }
+            else
+            {
+                MessageBox.Show("No hay detalles seleccionados para finalizar.", "Preparación de Pedidos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         public void actualizarGrillas()

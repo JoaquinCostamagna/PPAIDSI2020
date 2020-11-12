@@ -87,7 +87,7 @@ namespace RestaurantePPAI.Pedidos
         public void notificar()
         {
             this.BringToFront();
-            SystemSounds.Exclamation.Play();
+            SystemSounds.Beep.Play();
             habilitarCampana(true);
         }
 
