@@ -8,6 +8,7 @@ using System.Linq;
 using System.Media;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows.Forms;
 using RestaurantePPAI.Entidades;
 
@@ -17,7 +18,6 @@ namespace RestaurantePPAI.Pedidos
     {
 
         private GestorFinalizarPreparaciónPedido gestor;
-
         public pantallaMozo()
         {
             InitializeComponent();
@@ -84,10 +84,16 @@ namespace RestaurantePPAI.Pedidos
             return tabla;
         }
 
-        internal void notificar()
+        public void notificar()
         {
             this.BringToFront();
             SystemSounds.Exclamation.Play();
+            habilitarCampana(true);
+        }
+
+        private void habilitarCampana(bool x)
+        {
+            pbxCampana.Visible = x;
         }
 
         public void visualizar() 

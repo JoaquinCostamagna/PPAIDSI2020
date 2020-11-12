@@ -42,9 +42,9 @@ namespace RestaurantePPAI.Pedidos
                 admPedidos.actualizarGrillas();
                 publicarPedidosAServir();
             }
+
             foreach (pantallaMozo pantalla in pantallaMozos)
                 pantalla.notificar();
-            
             
             //System.Threading.Thread.Sleep(3000);
             
@@ -79,10 +79,6 @@ namespace RestaurantePPAI.Pedidos
                 pantalla.visualizar();
             }
 
-            
-
-            
-
             detalle.notificar(DateTime.Now);
 
             admPedidos.actualizarGrillas();
@@ -92,7 +88,6 @@ namespace RestaurantePPAI.Pedidos
             detallesPedidoAServir.RemoveAt(0);
 
             admPedidos.actualizarGrillas();
-
         }
 
         public void buscarDetallesPedidoEnPreparacion()
@@ -101,7 +96,7 @@ namespace RestaurantePPAI.Pedidos
 
             foreach(DetallePedido detalle in datos.Detalles)
             {
-                if (detalle.EstadoActual.esEnPreparacion() && detalle.EstadoActual.esAmbitoDetalle())
+                if (detalle.estaEnPreparacion())
                     this.detallesPedidoEnPreparacion.Add(detalle);
             }
         }

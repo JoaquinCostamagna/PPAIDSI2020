@@ -36,9 +36,11 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtListosParaServir = new System.Windows.Forms.Label();
+            this.pbxCampana = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNotificados)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCampana)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -118,11 +120,23 @@
             this.txtListosParaServir.Text = "PRODUCTOS A SERVIR";
             this.txtListosParaServir.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // pbxCampana
+            // 
+            this.pbxCampana.Image = global::RestaurantePPAI.Properties.Resources.campanita;
+            this.pbxCampana.Location = new System.Drawing.Point(9, 8);
+            this.pbxCampana.Name = "pbxCampana";
+            this.pbxCampana.Size = new System.Drawing.Size(166, 50);
+            this.pbxCampana.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbxCampana.TabIndex = 17;
+            this.pbxCampana.TabStop = false;
+            this.pbxCampana.Visible = false;
+            // 
             // pantallaMozo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(366, 348);
+            this.Controls.Add(this.pbxCampana);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblUsuarioLogeado);
@@ -134,6 +148,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNotificados)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCampana)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -148,5 +163,6 @@
         private System.Windows.Forms.Label txtListosParaServir;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.PictureBox pbxCampana;
     }
 }
